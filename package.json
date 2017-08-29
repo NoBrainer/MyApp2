@@ -2,17 +2,28 @@
   "name": "myapp2",
   "version": "0.0.0",
   "private": true,
+  "devDependencies": {
+    "browserify": "14.4.0",
+    "jade": "1.11.0",
+    "less": "2.7.2",
+    "watch": "latest"
+  },
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build:js": "browserify ./bin/www > dist/app.js",
+    "build:css": "lessc public/stylesheets/style.less > dist/style.css",
+    "build:html": "jade views/index.jade --out dist",
+    "build": "npm run build:js && npm run build:css && npm run build:html",
+    "watch": "watch 'npm run build' ."
   },
   "dependencies": {
-    "body-parser": "~1.17.1",
-    "cookie-parser": "~1.4.3",
+    "body-parser": "1.17.2",
+    "cookie-parser": "1.4.3",
     "debug": "~2.6.3",
-    "express": "~4.15.2",
-    "jade": "~1.11.0",
+    "express": "4.15.4",
     "less-middleware": "~2.2.0",
     "morgan": "~1.8.1",
-    "serve-favicon": "~2.4.2"
+    "serve-favicon": "~2.4.2",
+    "underscore": "1.8.3"
   }
 }
