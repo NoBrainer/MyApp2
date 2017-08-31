@@ -6,22 +6,25 @@
     "browserify": "14.4.0",
     "jade": "1.11.0",
     "less": "2.7.2",
-    "watch": "latest"
+    "parallelshell": "2.0.0",
+    "rimraf": "2.6.1",
+    "watch": "1.0.2"
   },
   "scripts": {
+    "clean": "rimraf dist/*",
     "start": "node ./bin/www",
-    "build:js": "browserify ./bin/www > dist/app.js",
-    "build:css": "lessc public/stylesheets/style.less > dist/style.css",
-    "build:html": "jade views/index.jade --out dist",
-    "build": "npm run build:js && npm run build:css && npm run build:html",
-    "watch": "watch 'npm run build' ."
+    "watch": "watch 'npm run build' .",
+    "prebuild": "npm run clean -s",
+    "build": "npm run build:css && npm run build:html && npm run build:js",
+    "build:js": "browserify bin/www > dist/index.js",
+    "build:css": "lessc public/stylesheets/style.less > public/stylesheets/style.css",
+    "build:html": "jade views/index.jade --out dist"
   },
   "dependencies": {
     "body-parser": "1.17.2",
     "cookie-parser": "1.4.3",
     "debug": "~2.6.3",
     "express": "4.15.4",
-    "less-middleware": "~2.2.0",
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2",
     "underscore": "1.8.3"
