@@ -11,13 +11,13 @@
 	- `sudo vi ~/.bashrc`
 - Add this:
 ```
- # CUSTOM ALIASES
+# CUSTOM ALIASES
  
- # ssh into server
- alias sshserver='ssh {user}@{server_ip}'
+# ssh into server
+alias sshserver='ssh {user}@{server_ip}'
  
- # update server code
- alias updateserver='rsync -ru --delete /path/to/deployment/directory {user}@{server_ip}:bin'
+# update server code
+alias updateserver='rsync -ru --delete /path/to/deployment/directory {user}@{server_ip}:bin'
 ```
 - Apply changes
 	- `source ~/.bashrc`
