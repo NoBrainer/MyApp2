@@ -13,12 +13,15 @@
   "scripts": {
     "clean": "rimraf dist/*",
     "start": "node ./bin/www",
-    "watch": "watch 'npm run build' .",
+    "watch": "parallelshell \"npm run watch:css -s\" \"npm run watch:html -s\" \"npm run watch:js -s\"",
+    "watch:css": "watch 'npm run build:css' public/stylesheets",
+    "watch:html": "watch 'npm run build:html' views",
+    "watch:js": "watch 'npm run build:js' .",
     "prebuild": "npm run clean -s",
     "build": "npm run build:css && npm run build:html && npm run build:js",
-    "build:js": "browserify bin/www > dist/index.js",
     "build:css": "lessc public/stylesheets/style.less > public/stylesheets/style.css",
-    "build:html": "jade views/index.jade --out dist"
+    "build:html": "jade views/index.jade --out dist",
+    "build:js": "browserify bin/www > dist/index.js"
   },
   "dependencies": {
     "body-parser": "1.17.2",
