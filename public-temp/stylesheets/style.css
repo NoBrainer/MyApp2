@@ -278,3 +278,16 @@ a.footer_link {
 #content #menu_content .menu_img.landscape_3 {
   height: 582px;
 }
+#menu_loading {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  bottom: 0;
+  display: none;
+  left: 50%;
+  margin: 0 auto;
+  padding: 10px;
+  position: fixed;
+  text-align: center;
+  width: 180px;
+}

@@ -82,6 +82,13 @@
         if (html !== "") {
             $menuBody.append(html);
             menusLoaded++;
+            showLoading();
+        }
+    }
+    function showLoading() {
+        var $loadingBox = $('#menu_loading');
+        if ($loadingBox.is(':hidden')) {
+            $loadingBox.fadeIn('slow').fadeOut('slow');
         }
     }
 })();
