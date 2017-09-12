@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 a {
@@ -10,8 +9,7 @@ a {
   justify-content: center;
 }
 #menu-object {
-  flex: 0 1 467px;
-}
-#menu-object text#text14196 {
-  cursor: pointer;
+  height: 100%;
+  max-width: 1000px;
+  width: 100%;
 }
