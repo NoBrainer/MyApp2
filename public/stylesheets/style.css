@@ -13,3 +13,7 @@ a {
   max-width: 1000px;
   width: 100%;
 }
+.clickable {
+  cursor: pointer;
+  pointer-events: bounding-box;
+}
