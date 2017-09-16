@@ -34,7 +34,7 @@
     }
 
     function setup() {
-        $.get('/images/WebMenu-v2.svg')
+        $.get('/images/WebMenu.svg')
             .done(function(resp) {
                 // Load the SVG and add it to the page
                 var svgContent = resp.children[0];
